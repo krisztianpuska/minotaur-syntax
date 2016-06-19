@@ -1,0 +1,273 @@
+@import "syntax-variables";
+
+atom-text-editor,
+:host {
+	background-color: @syntax-background-color;
+	color: @syntax-text-color;
+
+	.invisible-character {
+		background-color: transparent;
+		color: @gray;
+	}
+
+	// Indent lines
+	.indent-guide { color: fade(@dark-mid, 50%); }
+
+	// Numbers
+	.gutter {
+		color: @dark-mid;
+
+		.cursor-line {
+			color: @light-gray;
+			background: @very-dark-gray;
+		}
+	}
+
+	// TODO It might break things
+	.custom-decorations {
+		min-width: 0;
+		width: 0;
+	}
+
+	// There is a selection in this line
+	.line-number.cursor-line-no-selection { background: @dark-gray-mid; }
+
+	// Current line
+	.cursor-line { background-color: @dark-gray-mid; }
+
+	.invisible { color: @dark-mid; }
+	.cursor { border-color: @very-light-gray; }
+	.selection .region { background-color: @very-dark-gray; }
+
+	// Reset trailing whitespace
+	.line .trailing-whitespace { background-color: transparent; }
+
+	// .entity.other.attribute-name { font-style: italic; }
+
+	.search-results .marker .region {
+		background-color: transparent;
+		border: 1px solid @gray;
+	}
+
+	.search-results .marker.current-result .region { border: 1px solid @dark-mid; }
+
+	// TODO
+	.gfm {
+		.markup {
+			&.heading {
+				color: @green-color;
+
+				font-weight: bold;
+			}
+
+			&.underline {
+				color: @yellow-color;
+
+				text-decoration: underline;
+			}
+		}
+
+		.bold { font-weight: bold; }
+		.italic { font-style: italic; }
+		.raw { color: @blue-color; }
+
+		.variable.list {
+			color: @pink-color;
+
+			font-weight: bold;
+		}
+
+		.link {
+			color: @very-light-gray;
+
+			.entity { color: @purple-color; }
+		}
+	}
+}
+
+.comment { color: @gray; }
+
+// TODO
+.constant {
+	&.numeric,
+	&.language,
+	&.character,
+	&.escape,
+	&.other { color: @purple-color; }
+
+	&.type {
+		font-style: italic;
+		color: @blue-color;
+	}
+}
+
+// TODO
+.entity {
+	&.name.class {
+		text-decoration: none;
+		color: @green-color;
+	}
+
+	&.other.inherited-class {
+		font-style: italic;
+		text-decoration: none;
+		color: @green-color;
+	}
+
+	&.name.function { color: @green-color; }
+	&.name.instance { color: @blue-color; }
+	&.name.tag { color: @pink-color; }
+	&.other.attribute-name { color: @green-color; }
+}
+
+// TODO
+.invalid {
+	background-color: @pink-color;
+	color: @syntax-cursor-color;
+
+	&.deprecated {
+		color: @syntax-cursor-color;
+		background-color: @purple-color;
+	}
+}
+
+// TODO
+.keyword {
+	color: @pink-color;
+
+	&.operator.bracket,
+	&.operator.punctuation {
+		color: @gray;
+	}
+}
+
+// TODO
+.bracket-matcher .region {
+	border-bottom: 0;
+	box-shadow: 0 1px 0 0 @green-color;
+}
+
+// TODO
+.leading-whitespace,
+.trailing-whitespace { display: inline-block; }
+
+// TODO
+.meta {
+	&.class {
+		color: @very-light-gray;
+
+		&.body { color: @syntax-text-color; }
+	}
+
+	&.method-call,
+	&.method { color: @syntax-text-color; }
+
+	&.definition.variable { color: @red-color; }
+
+	&.link { color: @very-light-gray; }
+	&.require { color: @blue-color; }
+	&.selector { color: @purple-color; }
+
+	&.separator {
+		background-color: @dark-mid;
+		color: @dark-mid;
+	}
+
+	&.tag { color: @dark-mid; }
+}
+
+// TODO
+.punctuation {
+	&.definition {
+		&.comment { color: @gray; }
+
+		&.method-parameters,
+		&.function-parameters,
+		&.parameters,
+		&.separator,
+		&.seperator,
+		&.array {
+			color: @syntax-text-color;
+		}
+
+		&.heading,
+		&.identity {
+			color: @blue-color;
+		}
+
+		&.bold {
+			color: @very-light-gray;
+			font-weight: bold;
+		}
+
+		&.italic {
+			color: @purple-color;
+			font-style: italic;
+		}
+	}
+
+	&.section {
+		&.embedded { color: @red-color; }
+
+		&.method,
+		&.class,
+		&.inner-class { color: @dark-mid; }
+	}
+}
+
+// TODO
+.support {
+	&.constant { color: @blue-color; }
+	&.function {
+		color: @blue-color;
+
+		&.any-method { color: @blue-color; }
+	}
+
+	&.function.decl { color: @green-color; }
+
+	&.type,
+	&.class {
+		color: @blue-color;
+
+		font-style: italic;
+	}
+}
+
+// TODO
+.storage {
+	color: @pink-color;
+
+	&.type {
+		color: @blue-color;
+
+		font-style: italic;
+	}
+}
+
+// TODO
+.string {
+	color: @yellow-color;
+
+	&.regexp {
+		color: @blue-color;
+
+		.source.ruby.embedded { color: @very-light-gray; }
+	}
+
+	&.other.link { color: @red-color; }
+}
+
+// TODO
+.variable {
+	color: @very-light-gray;
+
+	&.interpolation { color: @purple-color; }
+	&.parameter {
+		color: @purple-color;
+
+		font-style: italic;
+	}
+
+	&.language.js { color: @pink-color; }
+}
