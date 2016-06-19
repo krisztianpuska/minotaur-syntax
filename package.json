@@ -1,7 +1,7 @@
 {
 	"name": "minotaur-syntax",
 	"theme": "syntax",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "The Minotaur is a monokai based syntax theme for One Dark UI.",
 	"author": "Krisztian Puska",
 	"keywords": [
