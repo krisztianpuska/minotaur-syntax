@@ -14,7 +14,7 @@
 		"minotaur"
 	],
 	"engines": {
-		"atom": ">1.8.0"
+		"atom": ">1.0.0"
 	},
 	"repository": {
 		"type": "git",
