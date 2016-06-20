@@ -2,8 +2,8 @@
 
 atom-text-editor,
 :host {
-	background-color: @syntax-background-color;
-	color: @syntax-text-color;
+	background-color: @darkest;
+	color: @light;
 
 	.invisible-character {
 		background-color: transparent;
@@ -11,45 +11,50 @@ atom-text-editor,
 	}
 
 	// Indent lines
-	.indent-guide { color: fade(@dark-mid, 50%); }
+	.indent-guide { color: @dark; }
 
 	// Numbers
 	.gutter {
-		color: @dark-mid;
+		color: @gray;
 
 		.cursor-line {
-			color: @light-gray;
-			background: @very-dark-gray;
+			color: @light;
+			background: @black;
 		}
 	}
 
 	// TODO It might break things
-	.custom-decorations {
-		min-width: 0;
-		width: 0;
-	}
+	// .gutter[gutter-name="linter"] { min-width: 0; }
 
 	// There is a selection in this line
-	.line-number.cursor-line-no-selection { background: @dark-gray-mid; }
+	.line-number.cursor-line-no-selection { background: @black; }
 
 	// Current line
-	.cursor-line { background-color: @dark-gray-mid; }
+	.cursor-line { background-color: @black; }
 
-	.invisible { color: @dark-mid; }
-	.cursor { border-color: @very-light-gray; }
-	.selection .region { background-color: @very-dark-gray; }
+	// TODO
+	// .line { box-shadow: inset 0 1px 0 0 fade(@lightest, 1%); }
+
+	.bracket-matcher .region {
+		border-bottom: 0;
+		box-shadow: 0 1px 0 0 @green-color;
+	}
+
+	.invisible { color: @gray; }
+	.cursor { border-color: @lightest; }
+	.selection .region { background-color: @black; }
 
 	// Reset trailing whitespace
 	.line .trailing-whitespace { background-color: transparent; }
 
-	// .entity.other.attribute-name { font-style: italic; }
+	.entity.other.attribute-name { font-style: italic; }
 
 	.search-results .marker .region {
 		background-color: transparent;
 		border: 1px solid @gray;
 	}
 
-	.search-results .marker.current-result .region { border: 1px solid @dark-mid; }
+	.search-results .marker.current-result .region { border: 1px solid @gray; }
 
 	// TODO
 	.gfm {
@@ -78,7 +83,7 @@ atom-text-editor,
 		}
 
 		.link {
-			color: @very-light-gray;
+			color: @lightest;
 
 			.entity { color: @purple-color; }
 		}
@@ -123,10 +128,10 @@ atom-text-editor,
 // TODO
 .invalid {
 	background-color: @pink-color;
-	color: @syntax-cursor-color;
+	color: @lightest;
 
 	&.deprecated {
-		color: @syntax-cursor-color;
+		color: @lightest;
 		background-color: @purple-color;
 	}
 }
@@ -142,38 +147,32 @@ atom-text-editor,
 }
 
 // TODO
-.bracket-matcher .region {
-	border-bottom: 0;
-	box-shadow: 0 1px 0 0 @green-color;
-}
-
-// TODO
 .leading-whitespace,
 .trailing-whitespace { display: inline-block; }
 
 // TODO
 .meta {
 	&.class {
-		color: @very-light-gray;
+		color: @lightest;
 
-		&.body { color: @syntax-text-color; }
+		&.body { color: @light; }
 	}
 
 	&.method-call,
-	&.method { color: @syntax-text-color; }
+	&.method { color: @light; }
 
 	&.definition.variable { color: @red-color; }
 
-	&.link { color: @very-light-gray; }
+	&.link { color: @lightest; }
 	&.require { color: @blue-color; }
 	&.selector { color: @purple-color; }
 
 	&.separator {
-		background-color: @dark-mid;
-		color: @dark-mid;
+		background-color: @gray;
+		color: @gray;
 	}
 
-	&.tag { color: @dark-mid; }
+	&.tag { color: @gray; }
 }
 
 // TODO
@@ -187,7 +186,7 @@ atom-text-editor,
 		&.separator,
 		&.seperator,
 		&.array {
-			color: @syntax-text-color;
+			color: @light;
 		}
 
 		&.heading,
@@ -196,7 +195,7 @@ atom-text-editor,
 		}
 
 		&.bold {
-			color: @very-light-gray;
+			color: @lightest;
 			font-weight: bold;
 		}
 
@@ -211,7 +210,7 @@ atom-text-editor,
 
 		&.method,
 		&.class,
-		&.inner-class { color: @dark-mid; }
+		&.inner-class { color: @gray; }
 	}
 }
 
@@ -252,7 +251,7 @@ atom-text-editor,
 	&.regexp {
 		color: @blue-color;
 
-		.source.ruby.embedded { color: @very-light-gray; }
+		.source.ruby.embedded { color: @lightest; }
 	}
 
 	&.other.link { color: @red-color; }
@@ -260,7 +259,7 @@ atom-text-editor,
 
 // TODO
 .variable {
-	color: @very-light-gray;
+	color: @lightest;
 
 	&.interpolation { color: @purple-color; }
 	&.parameter {
