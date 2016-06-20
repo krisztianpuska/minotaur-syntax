@@ -1,9 +1,13 @@
 @import "syntax-variables";
 
+// TODO Future UI tweaks:
+.tab-bar,
+.tab-bar .tab .title {}
+
 atom-text-editor,
 :host {
 	background-color: @darkest;
-	color: @light;
+	color: @lightest;
 
 	.invisible-character {
 		background-color: transparent;
@@ -17,44 +21,47 @@ atom-text-editor,
 	.gutter {
 		color: @gray;
 
-		.cursor-line {
-			color: @light;
-			background: @black;
-		}
+		.cursor-line { color: @lightest; }
 	}
 
-	// TODO It might break things
-	// .gutter[gutter-name="linter"] { min-width: 0; }
-
-	// There is a selection in this line
-	.line-number.cursor-line-no-selection { background: @black; }
-
-	// Current line
+	// Current line, line-number
+	.line-number.cursor-line-no-selection,
 	.cursor-line { background-color: @black; }
 
-	// TODO
+	// NOTE: Enable visible lines
 	// .line { box-shadow: inset 0 1px 0 0 fade(@lightest, 1%); }
 
+	// NOTE: Experimental
 	.bracket-matcher .region {
+		background-color: @black;
+		box-shadow: 0 2px 0 0 @green-color;
 		border-bottom: 0;
-		box-shadow: 0 1px 0 0 @green-color;
 	}
 
-	.invisible { color: @gray; }
+	// TODO
+	// .invisible { color: @dark; }
+
+	// Cursor
 	.cursor { border-color: @lightest; }
-	.selection .region { background-color: @black; }
+
+	// Selection
+	.selection .region { background-color: @dark;  }
 
 	// Reset trailing whitespace
-	.line .trailing-whitespace { background-color: transparent; }
-
-	.entity.other.attribute-name { font-style: italic; }
-
-	.search-results .marker .region {
+	.line .trailing-whitespace {
 		background-color: transparent;
-		border: 1px solid @gray;
+		border: 0;
 	}
 
-	.search-results .marker.current-result .region { border: 1px solid @gray; }
+	// TODO
+	.search-results .marker .region,
+	.search-results .marker.current-result .region {
+		background-color: transparent;
+		border: 0;
+	}
+
+	// TODO
+	// .entity.other.attribute-name { font-style: italic; }
 
 	// TODO
 	.gfm {
@@ -90,6 +97,7 @@ atom-text-editor,
 	}
 }
 
+// This is a demo comment
 .comment { color: @gray; }
 
 // TODO
@@ -152,18 +160,19 @@ atom-text-editor,
 
 // TODO
 .meta {
+	color: @light;
+
 	&.class {
 		color: @lightest;
 
 		&.body { color: @light; }
 	}
 
-	&.method-call,
-	&.method { color: @light; }
-
 	&.definition.variable { color: @red-color; }
 
+	&.array,
 	&.link { color: @lightest; }
+
 	&.require { color: @blue-color; }
 	&.selector { color: @purple-color; }
 
@@ -177,6 +186,8 @@ atom-text-editor,
 
 // TODO
 .punctuation {
+	color: @gray;
+
 	&.definition {
 		&.comment { color: @gray; }
 
