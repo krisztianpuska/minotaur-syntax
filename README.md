@@ -10,3 +10,4 @@ TODO:
 - [ ] animate matching bracket
 - [ ] test with other languages
 - [ ] colors needs to be a bit tainted
+- [ ] light version
