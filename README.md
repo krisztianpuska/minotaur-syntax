@@ -1,6 +1,6 @@
 # The minotaur syntax
 
-The Minotaur is a monokai based syntax theme for One Dark UI &middot; with the head of a bull and the body of a man.  
+The Minotaur is a monokai based syntax theme for One Dark UI &middot; with the head of a bull and the body of a man.
 
 Please note that this is a WIP version: things might change.
 
@@ -13,3 +13,4 @@ TODO:
 - [ ] test with other languages
 - [ ] bright colors needs to be a bit tainted with blood
 - [ ] light version
+- [ ] markdown preview
