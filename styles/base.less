@@ -6,8 +6,8 @@
 
 atom-text-editor,
 :host {
-	background-color: @darkest;
-	color: @lightest;
+	background-color: @dark;
+	color: @white;
 
 	.invisible-character {
 		background-color: transparent;
@@ -15,13 +15,13 @@ atom-text-editor,
 	}
 
 	// Indent lines
-	.indent-guide { color: @dark; }
+	.indent-guide { color: fade(@gray, 20%); }
 
 	// Numbers
 	.gutter {
 		color: @gray;
 
-		.cursor-line { color: @lightest; }
+		.cursor-line { color: @white; }
 	}
 
 	// Current line, line-number
@@ -29,11 +29,11 @@ atom-text-editor,
 	.cursor-line { background-color: @black; }
 
 	// NOTE: Enable visible lines
-	// .line { box-shadow: inset 0 1px 0 0 fade(@lightest, 1%); }
+	// .line { box-shadow: inset 0 1px 0 0 fade(@white, 1%); }
 
 	// NOTE: Experimental
 	.bracket-matcher .region {
-		background-color: @black;
+		background-color: @dark;
 		box-shadow: inset 0 -1px 0 0 @gray;
 		border-bottom: 0;
 	}
@@ -42,10 +42,10 @@ atom-text-editor,
 	// .invisible { color: @dark; }
 
 	// Cursor
-	.cursor { border-color: @lightest; }
+	.cursor { border-color: @white; }
 
 	// Selection
-	.selection .region { background-color: @dark;  }
+	.selection .region { background-color: fade(@gray, 25%); }
 
 	// Reset trailing whitespace
 	.line .trailing-whitespace {
@@ -90,11 +90,16 @@ atom-text-editor,
 		}
 
 		.link {
-			color: @lightest;
+			color: @white;
 
 			.entity { color: @purple-color; }
 		}
 	}
+}
+
+// Markdown preview
+.markdown-preview {
+	background-color: white;
 }
 
 // This is a demo comment
@@ -136,10 +141,10 @@ atom-text-editor,
 // TODO
 .invalid {
 	background-color: @pink-color;
-	color: @lightest;
+	color: @white;
 
 	&.deprecated {
-		color: @lightest;
+		color: @white;
 		background-color: @purple-color;
 	}
 }
@@ -160,18 +165,18 @@ atom-text-editor,
 
 // TODO
 .meta {
-	color: @light;
+	color: @gray;
 
 	&.class {
-		color: @lightest;
+		color: @white;
 
-		&.body { color: @light; }
+		&.body { color: @gray; }
 	}
 
 	&.definition.variable { color: @red-color; }
 
 	&.array,
-	&.link { color: @lightest; }
+	&.link { color: @white; }
 
 	&.require { color: @blue-color; }
 	&.selector { color: @purple-color; }
@@ -197,7 +202,7 @@ atom-text-editor,
 		&.separator,
 		&.seperator,
 		&.array {
-			color: @light;
+			color: @gray;
 		}
 
 		&.heading,
@@ -206,7 +211,7 @@ atom-text-editor,
 		}
 
 		&.bold {
-			color: @lightest;
+			color: @white;
 			font-weight: bold;
 		}
 
@@ -262,7 +267,7 @@ atom-text-editor,
 	&.regexp {
 		color: @blue-color;
 
-		.source.ruby.embedded { color: @lightest; }
+		.source.ruby.embedded { color: @white; }
 	}
 
 	&.other.link { color: @red-color; }
@@ -270,7 +275,7 @@ atom-text-editor,
 
 // TODO
 .variable {
-	color: @lightest;
+	color: @white;
 
 	&.interpolation { color: @purple-color; }
 	&.parameter {
