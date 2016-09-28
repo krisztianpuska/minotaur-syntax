@@ -7,10 +7,9 @@ Please note that this is a WIP version: things might change.
 ![screenshot](https://raw.githubusercontent.com/krisztianpuska/minotaur-syntax/master/screenshot.png)
 
 TODO:
-- [ ] darks a bit too red
+- [x] darks a bit too red
 - [x] bracket-line too bright
 - [ ] animate matching bracket
 - [ ] test with other languages
 - [ ] bright colors needs to be a bit tainted with blood
 - [ ] light version
-- [ ] markdown preview
