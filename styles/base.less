@@ -1,11 +1,7 @@
 @import "syntax-variables";
 
-// TODO Future UI tweaks:
-.tab-bar,
-.tab-bar .tab .title {}
-
 atom-text-editor {
-	background-color: @dark;
+	background-color: @black;
 	color: @white;
 
 	.invisible-character {
@@ -17,7 +13,7 @@ atom-text-editor {
 	.indent-guide { color: fade(@gray, 50%); }
 
 	// Wrap
-	.wrap-guide { background-color: fade(@gray, 10%) !important; }
+	.wrap-guide { background-color: fade(@gray, 25%); }
 
 	// Numbers
 	.gutter {
@@ -29,26 +25,25 @@ atom-text-editor {
 
 	// Current line, line-number
 	.line-number.cursor-line-no-selection,
-	.cursor-line { background-color: @black; }
+	.cursor-line {
+		background-color: fade(@gray, 25%);
+	}
 
 	// NOTE: Enable visible lines
-	// .line { box-shadow: inset 0 1px 0 0 fade(@white, 1%); }
+	// .line { box-shadow: inset 0 1px 0 0 fade(@white, 2%); }
 
 	// NOTE: Experimental
 	.bracket-matcher .region {
-		background-color: @dark;
-		box-shadow: inset 0 -1px 0 0 @gray;
+		background-color: fade(@gray, 50%);
+		border-radius: 2px;
 		border-bottom: 0;
 	}
-
-	// TODO
-	// .invisible { color: @dark; }
 
 	// Cursor
 	.cursor { border-color: @white; }
 
 	// Selection
-	.selection .region { background-color: fade(@gray, 50%); }
+	.selection .region { background-color: fade(@gray, 25%); }
 
 	// Reset trailing whitespace
 	.line .trailing-whitespace {
@@ -56,105 +51,70 @@ atom-text-editor {
 		border: 0;
 	}
 
-	// TODO
+	// Search results
 	.search-results .syntax--marker .region,
 	.search-results .syntax--marker.current-result .region {
 		background-color: transparent;
 		border: 0;
 	}
-
-	// TODO
-	// .entity.other.attribute-name { font-style: italic; }
-
-	// TODO
-	.syntax--gfm {
-		.syntax--markup {
-			&.syntax--heading {
-				color: @green-color;
-
-				font-weight: bold;
-			}
-
-			&.syntax--underline {
-				color: @yellow-color;
-
-				text-decoration: underline;
-			}
-		}
-
-		.syntax--bold { font-weight: bold; }
-		.syntax--italic { font-style: italic; }
-		.syntax--raw { color: @blue-color; }
-
-		.syntax--variable.syntax--list {
-			color: @pink-color;
-
-			font-weight: bold;
-		}
-
-		.syntax--link {
-			color: @white;
-
-			.syntax--entity { color: @purple-color; }
-		}
-	}
 }
 
 // Markdown preview
-.markdown-preview {
-	background-color: white;
-}
+.markdown-preview { background-color: white; }
 
-// This is a demo comment
+// Comment color
 .syntax--comment { color: @gray; }
 
-// TODO
+// Javascript frameworks
+.syntax--js .syntax--section.syntax--embedded.syntax--jsx { color: @gray; }
+
+// TODO Review
 .syntax--constant {
 	&.syntax--numeric,
 	&.syntax--language,
 	&.syntax--character,
 	&.syntax--escape,
-	&.syntax--other { color: @purple-color; }
+	&.syntax--other { color: @blue; }
 
 	&.syntax--type {
 		font-style: italic;
-		color: @blue-color;
+		color: @aqua;
 	}
 }
 
-// TODO
+// TODO Review
 .syntax--entity {
 	&.syntax--name.syntax--class {
 		text-decoration: none;
-		color: @green-color;
+		color: @lime;
 	}
 
 	&.syntax--other.syntax--inherited-class {
 		font-style: italic;
 		text-decoration: none;
-		color: @green-color;
+		color: @lime;
 	}
 
-	&.syntax--name.syntax--function { color: @green-color; }
-	&.syntax--name.syntax--instance { color: @blue-color; }
-	&.syntax--name.syntax--tag { color: @pink-color; }
-	&.syntax--other.syntax--attribute-name { color: @green-color; }
+	&.syntax--name.syntax--function { color: @lime; }
+	&.syntax--name.syntax--instance { color: @aqua; }
+	&.syntax--name.syntax--tag { color: @fuchsia; }
+	&.syntax--other.syntax--attribute-name { color: @lime; }
 }
 
-// TODO
+// TODO Review
 .syntax--invalid {
-	background-color: @pink-color;
+	background-color: @fuchsia;
 	color: @white;
 
 	&.syntax--deprecated {
 		color: @white;
-		background-color: @purple-color;
+		background-color: @blue;
 	}
 }
 
-// TODO
+// TODO Review
 .syntax--keyword {
-	color: @pink-color;
+	color: @fuchsia;
 
 	&.syntax--operator.syntax--bracket,
 	&.syntax--operator.syntax--punctuation {
@@ -162,11 +122,11 @@ atom-text-editor {
 	}
 }
 
-// TODO
+// TODO Review
 .leading-whitespace,
 .trailing-whitespace { display: inline-block; }
 
-// TODO
+// TODO Review
 .syntax--meta {
 	color: @gray;
 
@@ -176,13 +136,13 @@ atom-text-editor {
 		&.syntax--body { color: @gray; }
 	}
 
-	&.syntax--definition.syntax--variable { color: @red-color; }
+	&.syntax--definition.syntax--variable { color: @red; }
 
 	&.syntax--array,
 	&.syntax--link { color: @white; }
 
-	&.syntax--require { color: @blue-color; }
-	&.syntax--selector { color: @purple-color; }
+	&.syntax--require { color: @aqua; }
+	&.syntax--selector { color: @blue; }
 
 	&.syntax--separator {
 		background-color: @gray;
@@ -192,7 +152,7 @@ atom-text-editor {
 	&.syntax--tag { color: @gray; }
 }
 
-// TODO
+// TODO Review
 .syntax--punctuation {
 	color: @gray;
 
@@ -209,7 +169,7 @@ atom-text-editor {
 
 		&.syntax--heading,
 		&.syntax--identity {
-			color: @blue-color;
+			color: @aqua;
 		}
 
 		&.syntax--bold {
@@ -218,13 +178,13 @@ atom-text-editor {
 		}
 
 		&.syntax--italic {
-			color: @purple-color;
+			color: @blue;
 			font-style: italic;
 		}
 	}
 
 	&.syntax--section {
-		&.syntax--embedded { color: @red-color; }
+		&.syntax--embedded { color: @red; }
 
 		&.syntax--method,
 		&.syntax--class,
@@ -232,59 +192,59 @@ atom-text-editor {
 	}
 }
 
-// TODO
+// TODO Review
 .syntax--support {
-	&.syntax--constant { color: @blue-color; }
+	&.syntax--constant { color: @aqua; }
 	&.syntax--function {
-		color: @blue-color;
+		color: @aqua;
 
-		&.syntax--any-method { color: @blue-color; }
+		&.syntax--any-method { color: @aqua; }
 	}
 
-	&.syntax--function.syntax--decl { color: @green-color; }
+	&.syntax--function.syntax--decl { color: @lime; }
 
 	&.syntax--type,
 	&.syntax--class {
-		color: @blue-color;
+		color: @aqua;
 
 		font-style: italic;
 	}
 }
 
-// TODO
+// TODO Review
 .syntax--storage {
-	color: @pink-color;
+	color: @fuchsia;
 
 	&.syntax--type {
-		color: @blue-color;
+		color: @aqua;
 
 		font-style: italic;
 	}
 }
 
-// TODO
+// TODO Review
 .syntax--string {
-	color: @yellow-color;
+	color: @yellow;
 
 	&.syntax--regexp {
-		color: @blue-color;
+		color: @aqua;
 
 		.syntax--source.syntax--ruby.syntax--embedded { color: @white; }
 	}
 
-	&.syntax--other.syntax--link { color: @red-color; }
+	&.syntax--other.syntax--link { color: @red; }
 }
 
-// TODO
+// TODO Review
 .syntax--variable {
-	color: @white;
+	color: @silver;
 
-	&.syntax--interpolation { color: @purple-color; }
+	&.syntax--interpolation { color: @blue; }
 	&.syntax--parameter {
-		color: @purple-color;
+		color: @blue;
 
 		font-style: italic;
 	}
 
-	&.syntax--language.syntax--js { color: @pink-color; }
+	&.syntax--language.syntax--js { color: @fuchsia; }
 }
