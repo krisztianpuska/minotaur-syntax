@@ -1,1 +1,290 @@
-@import "./styles/base.less";
+@import "styles/colors";
+@import "styles/syntax-variables";
+
+atom-text-editor {
+	background-color: @black;
+	color: @white;
+
+	.invisible-character {
+		background-color: transparent;
+		color: @gray;
+	}
+
+	// Indent lines
+	.indent-guide {
+		color: fade(@white, 10%);
+	}
+
+	// Wrap
+	.wrap-guide {
+		background-color: fade(@gray, 25%);
+	}
+
+	// Numbers
+	.gutter {
+		color: @gray;
+
+		.icon-right,
+		.cursor-line {
+			color: @white;
+		}
+	}
+
+	// Current line, line-number
+	.line-number.cursor-line-no-selection,
+	.cursor-line {
+		background-color: fade(@gray, 25%);
+	}
+
+	// Bracket matcher
+	.bracket-matcher .region {
+		background-color: fade(@silver, 75%);
+		border-bottom: 0;
+	}
+
+	// Cursor
+	.cursor {
+		border-color: @white;
+	}
+
+	.selection .region {
+		background-color: fade(@white, 25%);
+	}
+}
+
+// Markdown preview
+.markdown-preview {
+	background-color: white;
+}
+
+// Comment color
+.syntax--comment {
+	color: @gray;
+}
+
+// Javascript frameworks
+.syntax--js .syntax--section.syntax--embedded.syntax--jsx {
+	color: @gray;
+}
+
+.syntax--constant {
+	&.syntax--numeric,
+	&.syntax--language,
+	&.syntax--character,
+	&.syntax--escape,
+	&.syntax--other {
+		color: @blue;
+	}
+
+	&.syntax--type {
+		font-style: italic;
+		color: @aqua;
+	}
+}
+
+.syntax--entity {
+	&.syntax--name.syntax--class {
+		text-decoration: none;
+		color: @lime;
+	}
+
+	&.syntax--other.syntax--inherited-class {
+		font-style: italic;
+		text-decoration: none;
+		color: @lime;
+	}
+
+	&.syntax--name.syntax--function {
+		color: @lime;
+	}
+
+	&.syntax--name.syntax--instance {
+		color: @aqua;
+	}
+
+	&.syntax--name.syntax--tag {
+		color: @fuchsia;
+	}
+
+	&.syntax--other.syntax--attribute-name {
+		color: @lime;
+	}
+}
+
+.syntax--invalid {
+	background-color: @fuchsia;
+	color: @white;
+
+	&.syntax--deprecated {
+		color: @white;
+		background-color: @blue;
+	}
+}
+
+.syntax--keyword {
+	color: @fuchsia;
+
+	&.syntax--operator.syntax--bracket,
+	&.syntax--operator.syntax--punctuation {
+		color: @gray;
+	}
+}
+
+.leading-whitespace,
+.trailing-whitespace {
+	display: inline-block;
+}
+
+.syntax--meta {
+	color: @gray;
+
+	&.syntax--class {
+		color: @white;
+
+		&.syntax--body {
+			color: @gray;
+		}
+	}
+
+	&.syntax--definition.syntax--variable {
+		color: @white;
+	}
+
+	&.syntax--array,
+	&.syntax--link {
+		color: @white;
+	}
+
+	&.syntax--require {
+		color: @aqua;
+	}
+
+	&.syntax--selector {
+		color: @blue;
+	}
+
+	&.syntax--separator {
+		background-color: @gray;
+		color: @gray;
+	}
+
+	&.syntax--tag {
+		color: @gray;
+	}
+
+	&.syntax--property {
+		color: @white;
+	}
+
+	&.syntax--entity {
+		color: @lime;
+	}
+
+	&.syntax--name {
+		color: @lime;
+	}
+}
+
+.syntax--punctuation {
+	color: @gray;
+
+	&.syntax--definition {
+		&.syntax--comment {
+			color: @gray;
+		}
+
+		&.syntax--method-parameters,
+		&.syntax--function-parameters,
+		&.syntax--parameters,
+		&.syntax--seperator,
+		&.syntax--array {
+			color: @gray;
+		}
+
+		&.syntax--heading,
+		&.syntax--identity {
+			color: @aqua;
+		}
+
+		&.syntax--bold {
+			color: @white;
+			font-weight: bold;
+		}
+
+		&.syntax--italic {
+			color: @blue;
+			font-style: italic;
+		}
+	}
+
+	&.syntax--section {
+		&.syntax--method,
+		&.syntax--class,
+		&.syntax--inner-class {
+			color: @gray;
+		}
+	}
+}
+
+.syntax--support {
+	&.syntax--constant {
+		color: @aqua;
+	}
+
+	&.syntax--function {
+		color: @aqua;
+
+		&.syntax--any-method {
+			color: @aqua;
+		}
+	}
+
+	&.syntax--function.syntax--decl {
+		color: @lime;
+	}
+
+	&.syntax--type,
+	&.syntax--class {
+		color: @aqua;
+
+		font-style: italic;
+	}
+}
+
+.syntax--storage {
+	color: @fuchsia;
+
+	&.syntax--type {
+		color: @aqua;
+	}
+}
+
+.syntax--string {
+	color: @yellow;
+
+	&.syntax--regexp {
+		color: @aqua;
+
+		.syntax--source.syntax--ruby.syntax--embedded {
+			color: @white;
+		}
+	}
+}
+
+.syntax--variable {
+	color: @silver;
+
+	&.syntax--interpolation {
+		color: @blue;
+	}
+
+	&.syntax--parameter {
+		color: @blue;
+
+		font-style: italic;
+	}
+
+	&.syntax--language.syntax--js {
+		color: @fuchsia;
+	}
+}
