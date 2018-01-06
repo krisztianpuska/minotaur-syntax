@@ -33,13 +33,12 @@ atom-text-editor {
 	// Current line, line-number
 	.line-number.cursor-line-no-selection,
 	.cursor-line {
-		background-color: fade(@gray, 25%);
+		background-color: fade(@gray, 10%);
 	}
 
 	// Bracket matcher
 	.bracket-matcher .region {
-		background-color: fade(@silver, 75%);
-		border-bottom: 0;
+		border-bottom: 1px solid @gray;
 	}
 
 	// Cursor
@@ -48,7 +47,7 @@ atom-text-editor {
 	}
 
 	.selection .region {
-		background-color: fade(@light, 25%);
+		background-color: fade(@silver, 25%);
 	}
 }
 
@@ -94,16 +93,36 @@ atom-text-editor {
 		color: @lime;
 	}
 
-	&.syntax--name.syntax--function {
+	&.syntax--name {
 		color: @lime;
-	}
 
-	&.syntax--name.syntax--instance {
-		color: @aqua;
-	}
+		&.syntax--function {
+			color: @lime;
+		}
 
-	&.syntax--name.syntax--tag {
-		color: @fuchsia;
+		&.syntax--instance {
+			color: @aqua;
+		}
+
+		&.syntax--instance {
+			color: @aqua;
+		}
+
+		&.syntax--modifier {
+			color: @aqua;
+		}
+
+		&.syntax--type {
+			color: @blue;
+
+			&.syntax--module {
+				color: @lime;
+			}
+		}
+
+		&.syntax--tag {
+			color: @fuchsia;
+		}
 	}
 
 	&.syntax--other.syntax--attribute-name {
@@ -256,6 +275,10 @@ atom-text-editor {
 
 	&.syntax--type {
 		color: @aqua;
+	}
+
+	&.syntax--modifier {
+		color: @fuchsia;
 	}
 }
 
