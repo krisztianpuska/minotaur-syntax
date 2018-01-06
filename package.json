@@ -1,19 +1,28 @@
 {
-	"name": "minotaur-syntax",
-	"theme": "syntax",
-	"version": "0.4.0",
-	"description": "Minotaur is a monokai based syntax theme for One Dark UI.",
-	"author": "Krisztian Puska <pyx@pyx.space>",
-	"keywords": ["atom", "syntax", "theme", "monokai", "one dark", "toned", "smooth", "minotaur"],
-	"engines": {
-		"atom": ">1.0.0"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/krisztianpuska/minotaur-syntax"
-	},
-	"bugs": {
-		"url": "https://github.com/krisztianpuska/minotaur-syntax/issues"
-	},
-	"license": "MIT"
+  "name": "minotaur-syntax",
+  "theme": "syntax",
+  "version": "0.5.0",
+  "description": "Minotaur is a monokai based syntax theme for One Dark UI.",
+  "author": "Krisztian Puska <pyx@pyx.space>",
+  "keywords": [
+    "atom",
+    "syntax",
+    "theme",
+    "monokai",
+    "one dark",
+    "toned",
+    "smooth",
+    "minotaur"
+  ],
+  "engines": {
+    "atom": ">1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krisztianpuska/minotaur-syntax"
+  },
+  "bugs": {
+    "url": "https://github.com/krisztianpuska/minotaur-syntax/issues"
+  },
+  "license": "MIT"
 }
