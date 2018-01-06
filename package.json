@@ -1,7 +1,7 @@
 {
 	"name": "minotaur-syntax",
 	"theme": "syntax",
-	"version": "0.3.1",
+	"version": "0.4.0",
 	"description": "Minotaur is a monokai based syntax theme for One Dark UI.",
 	"author": "Krisztian Puska <pyx@pyx.space>",
 	"keywords": ["atom", "syntax", "theme", "monokai", "one dark", "toned", "smooth", "minotaur"],

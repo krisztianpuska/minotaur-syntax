@@ -2,8 +2,8 @@
 @import "styles/syntax-variables";
 
 atom-text-editor {
-	background-color: @black;
-	color: @white;
+	background-color: @dark;
+	color: @light;
 
 	.invisible-character {
 		background-color: transparent;
@@ -12,7 +12,7 @@ atom-text-editor {
 
 	// Indent lines
 	.indent-guide {
-		color: fade(@white, 10%);
+		color: fade(@light, 10%);
 	}
 
 	// Wrap
@@ -26,7 +26,7 @@ atom-text-editor {
 
 		.icon-right,
 		.cursor-line {
-			color: @white;
+			color: @light;
 		}
 	}
 
@@ -44,11 +44,11 @@ atom-text-editor {
 
 	// Cursor
 	.cursor {
-		border-color: @white;
+		border-color: @light;
 	}
 
 	.selection .region {
-		background-color: fade(@white, 25%);
+		background-color: fade(@light, 25%);
 	}
 }
 
@@ -113,10 +113,10 @@ atom-text-editor {
 
 .syntax--invalid {
 	background-color: @fuchsia;
-	color: @white;
+	color: @light;
 
 	&.syntax--deprecated {
-		color: @white;
+		color: @light;
 		background-color: @blue;
 	}
 }
@@ -139,7 +139,7 @@ atom-text-editor {
 	color: @gray;
 
 	&.syntax--class {
-		color: @white;
+		color: @light;
 
 		&.syntax--body {
 			color: @gray;
@@ -147,12 +147,12 @@ atom-text-editor {
 	}
 
 	&.syntax--definition.syntax--variable {
-		color: @white;
+		color: @light;
 	}
 
 	&.syntax--array,
 	&.syntax--link {
-		color: @white;
+		color: @light;
 	}
 
 	&.syntax--require {
@@ -173,7 +173,7 @@ atom-text-editor {
 	}
 
 	&.syntax--property {
-		color: @white;
+		color: @light;
 	}
 
 	&.syntax--entity {
@@ -207,7 +207,7 @@ atom-text-editor {
 		}
 
 		&.syntax--bold {
-			color: @white;
+			color: @light;
 			font-weight: bold;
 		}
 
@@ -266,7 +266,7 @@ atom-text-editor {
 		color: @aqua;
 
 		.syntax--source.syntax--ruby.syntax--embedded {
-			color: @white;
+			color: @light;
 		}
 	}
 }
